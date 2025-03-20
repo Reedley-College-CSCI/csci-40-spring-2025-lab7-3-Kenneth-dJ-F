@@ -56,6 +56,7 @@ void readTemperatures(TemperatureRecord tempDay[], int& size) {
 
     while (size < 31 && tempFS >> tempDay[size].day >> tempDay[size].temperature) {
         size++;
+
     }
 
     tempFS.close();
