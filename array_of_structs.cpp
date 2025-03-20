@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <iomanip>
 using namespace std;
 
 
@@ -24,9 +25,10 @@ void readTemperatures(TemperatureRecord tempDay [], int& size); // TODO: Fix the
 void printTemperatures(const TemperatureRecord tempDay[], int size);
 //TemperatureRecord findMin(const ???);
 //TemperatureRecord findMax(const ???);
-//double findAverage(const ???);
+double findAverage(const TemperatureRecord tempDay[], int size);
 
 int main() {
+    double average;
     // TODO: Step 2 - Declare an array of TemperatureRecord structs (MAX_DAYS size)
 
    TemperatureRecord temp_per_day[MAX_DAYS];
@@ -40,6 +42,10 @@ int main() {
     printTemperatures(temp_per_day, size);
 
     // TODO: Step 5 - Compute and display min, max, and average temperature
+    average = findAverage(temp_per_day, size);
+
+    cout << "\nAverage Temperature is "
+        << fixed << setprecision(2) << average << endl;
 
     return 0;
 }
@@ -70,7 +76,7 @@ void printTemperatures(const TemperatureRecord tempDay[], int size) {
     cout << "Day   Temp\n";
 
     for (int i = 0; i < size; ++i) {
-        cout << tempDay[i].day << "     " << tempDay[i].temperature << endl;
+        cout << tempDay[i].day << setw(7) << tempDay[i].temperature << endl;
     }
 }
 
@@ -82,3 +88,16 @@ void printTemperatures(const TemperatureRecord tempDay[], int size) {
 
 // TODO: Step 10 - Implement findAverage()
 // Compute and return the average temperature
+double findAverage(const TemperatureRecord tempDay[], int size) {
+    double avg;
+    int sum = 0;
+
+    for (int i = 0; i < size; ++i) {
+        sum += tempDay[i].temperature;
+    }
+    
+    avg = sum / static_cast<double>(size);
+
+    return avg;
+
+}
