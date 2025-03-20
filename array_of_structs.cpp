@@ -20,8 +20,8 @@ const int MAX_DAYS = 31;
 
 
 // Function Prototypes
-//void readTemperatures(???); // TODO: Fix the parameters
-//void printTemperatures(const ???);
+void readTemperatures(TemperatureRecord); // TODO: Fix the parameters
+void printTemperatures(const ???);
 //TemperatureRecord findMin(const ???);
 //TemperatureRecord findMax(const ???);
 //double findAverage(const ???);
@@ -52,7 +52,6 @@ void readTemperatures(TemperatureRecord tempDay[], int& size) {
     if (!tempFS) {
         cout << "Error openning file\n";
         return;
-
     }
 
     while (size < 31 && tempFS >> tempDay[size].day >> tempDay[size].temperature) {
@@ -65,6 +64,7 @@ void readTemperatures(TemperatureRecord tempDay[], int& size) {
 
 // TODO: Step 7 - Implement printTemperatures()
 // Print all stored temperatures in a formatted table
+void printTemperatures ()
 
 // TODO: Step 8 - Implement findMin()
 // Return the TemperatureRecord with the lowest temperature
