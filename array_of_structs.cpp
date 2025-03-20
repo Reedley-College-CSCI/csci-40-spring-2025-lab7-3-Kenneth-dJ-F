@@ -52,6 +52,7 @@ void readTemperatures(TemperatureRecord tempDay[], int& size) {
     if (!tempFS) {
         cout << "Error openning file\n";
         return;
+
     }
 
     while (size < 31 && tempFS >> tempDay[size].day >> tempDay[size].temperature) {
