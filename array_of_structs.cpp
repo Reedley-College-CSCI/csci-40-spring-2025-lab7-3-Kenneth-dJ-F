@@ -78,6 +78,7 @@ void printTemperatures(const TemperatureRecord tempDay[], int size) {
     for (int i = 0; i < size; ++i) {
         cout << tempDay[i].day << setw(7) << tempDay[i].temperature << endl;
     }
+
 }
 
 // TODO: Step 8 - Implement findMin()
